@@ -8,12 +8,11 @@ const Navbar = () => {
 
             <div className='container'>
                 <div>
-                <i class="bi bi-cup-hot-fill fs-1"></i>
-                <a href='#' className='navbar-brand fs-2 text-white text-center ms-3'>
-                    Coffe Market
-                </a>
+                    <i class="bi bi-cup-hot-fill fs-1"></i>
+                    <a href='#' className='navbar-brand fs-2 text-white text-center ms-3'>
+                        Coffee Market
+                    </a>
                 </div>
-                
 
                 <ul className='navbar-nav mx-auto'>
                     <li className="nav-item">
