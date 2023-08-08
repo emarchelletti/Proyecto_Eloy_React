@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 const CartWidget = () => {
     const [cart, setCart] = useState(0);
 
@@ -10,12 +9,12 @@ const CartWidget = () => {
 
     return (
 
-        <button className="btn btn-primary position-relative" onClick={handleCartClick}>
-            <i className="bi bi-cart"></i>
-            <span className=" top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+        <button type="button" className="btn btn-dark position-relative" onClick={handleCartClick}>
+            <i className="bi bi-cart-fill fs-3"></i>
+            <span className=" position-absolute start-80 badge bg-danger rounded-pill">
             {cart}
             </span>
-            <span className="visually-hidden">New alerts</span>
+            <span className="visually-hidden">Cantidades carrito</span>
 
         </button >
     )

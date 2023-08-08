@@ -6,17 +6,11 @@ import Card from './components/Card/Card';
 
 const App = () =>{
   return (
-    
     <>
     <Navbar />
-    
     <Card />  
-    
     </>
-
-    
   );
-  
 }
 
 export default App
