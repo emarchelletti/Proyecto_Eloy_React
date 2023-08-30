@@ -1,10 +1,9 @@
 import {Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 import Navbar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer.jsx';
+import CardContainer from './components/Card/CardContainer';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -14,7 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element = {<ItemListContainer />} />
         <Route path='/category/:categoryId' element = {<ItemListContainer />} />
-        <Route path='/item/:id' element = {<ItemListContainer />} />
+        <Route path='/item/:id' element = {<CardContainer />} />
       </Routes>
     </>
   )

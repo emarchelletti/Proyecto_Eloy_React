@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const {categoryId} = useParams();
     
     useEffect(() => {
-        console.log("useEffect", categoryId);
+        console.log(categoryId);
         getProducts(categoryId).then((result) => {
 
             setProducts(result);

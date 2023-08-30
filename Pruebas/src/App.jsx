@@ -1,19 +1,22 @@
-import React from 'react';
+import {Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/NavBar';
-import Card from './components/Card/Card';
-import ItemCount from './components/ItemCount/ItemCount';
+import ItemListContainer from './components/ItemList/ItemListContainer.jsx';
+import CardContainer from './components/Card/CardContainer';
 
+function App() {
 
-
-
-const App = () =>{
   return (
     <>
-    <Navbar />
-    <Card />
-    <ItemCount />
+
+      <Navbar />
+      
+      <Routes>
+        <Route path='/' element = {<ItemListContainer />} />
+        <Route path='/category/:categoryId' element = {<ItemListContainer />} />
+        <Route path='/item/:id' element = {<CardContainer />} />
+      </Routes>
     </>
-  );
+  )
 }
 
 export default App

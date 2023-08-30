@@ -26,17 +26,15 @@ const ItemList = ({ productos }) => {
 
     return (
 
-
         <>
-            <h1 className='text-center display-4'>Productos</h1>
+            <h1 className='text-center display-1'>Productos</h1>
             <div className='container'>
                 <div className='row'>
                     {productos.map(producto => (
-
                         <div className="col-4">
                             {/* // Uso las `` para poder concatenar un string */}
 
-                            <div className="card mb-5 shadow h100">
+                            <div className="card mb-5 shadow">
                                 <Link to={`/item/${producto.id}`} className='text-decoration-none'>
                                     <img src={producto.img} className="card-img-top img-fluid" alt="Producto" />
                                 </Link>
@@ -55,7 +53,7 @@ const ItemList = ({ productos }) => {
                                         </div>
 
                                         <div className="col-6">
-                                            <button className="btn btn-primary" >Agregar al carrito</button>
+                                            <button className="btn btn-primary" /*>onClick={addToCart}*/>Agregar al carrito</button>
                                         </div>
                                     </div>
 

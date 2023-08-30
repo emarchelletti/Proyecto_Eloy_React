@@ -8,13 +8,14 @@ const Navbar = () => {
         <nav className="navbar sticky-top navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
 
             <div className='container'>
+            <Link to='/' className='text-decoration-none'>
                 <div>
                     <i class="bi bi-cup-hot-fill fs-1"></i>
-                    <Link to='/' className='navbar-brand fs-2 text-white text-center ms-3'>
+                    <a className='navbar-brand fs-2 text-white text-center ms-3'>
                         Coffee Market
-                    </Link>
+                    </a>
                 </div>
-
+                </Link>
                 <ul className='navbar-nav mx-auto'>
                     <li className="nav-item">
                         <NavLink  to="/category/Aromas" className="nav-link fs-5 text-white border-start border-white border-3">Aromas</NavLink>
