@@ -39,9 +39,10 @@ const ItemList = ({ productos }) => {
                                     <img src={producto.img} className="card-img-top img-fluid" alt="Producto" />
                                 </Link>
                                 <div className="card-body">
-                                    <h2 className="card-title">{producto.name}</h2>
-                                    <h3 className="card-text">{producto.description}</h3>
+                                    <h2 className="card-title h1">{producto.title}</h2>
+                                    <h3 className="card-text h4">{producto.description}</h3>
                                     <p className="card-text">Precio: ${producto.price}</p>
+                                    <p className="card-text">Stock: {producto.stock}</p>
 
                                     <div className="row align-items-center">
                                         <div className="col-6">

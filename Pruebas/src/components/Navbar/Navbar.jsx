@@ -17,7 +17,7 @@ const Navbar = () => {
 
                 <ul className='navbar-nav mx-auto'>
                     <li className="nav-item">
-                        <NavLink  to="/category/Aromas" className="nav-link fs-5 text-white border-start border-white border-3">Aromas</NavLink>
+                        <NavLink  to="/category/cafe" className="nav-link fs-5 text-white border-start border-white border-3">Cafe</NavLink>
                     </li>
                     <li className="nav-item">
                     <NavLink  to="/category/Cafeteras" className="nav-link fs-5 text-white border-start border-white border-3">Cafeteras</NavLink>
