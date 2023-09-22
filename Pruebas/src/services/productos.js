@@ -21,21 +21,21 @@ import {
 //     { id: "9", name: 'Regalo 3', description: 'Taza de regalo 3', price:300, stock:10, img:'https://images.pexels.com/photos/359991/pexels-photo-359991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', category: 'Regalos' },
 // ];
 
-export const getProduct = (id) => {
-    return new Promise((resolve, reject) => { // Promise recibe como parametro las funciones resolve y reject
+// export const getProduct = (id) => {
+//     return new Promise((resolve, reject) => { // Promise recibe como parametro las funciones resolve y reject
 
-        setTimeout(() => { // Buscamos el producto x id
-            const card = stock.find((p) => p.id === id);
+//         setTimeout(() => { // Buscamos el producto x id
+//             const card = stock.find((p) => p.id === id);
 
-            // Si existe el producto
-            if (card) {
-                resolve(card);
-            } else {
-                reject('No existe el producto');
-            }
-        }, 500); 
-    });
-}
+//             // Si existe el producto
+//             if (card) {
+//                 resolve(card);
+//             } else {
+//                 reject('No existe el producto');
+//             }
+//         }, 500); 
+//     });
+// }
 
 // getProducts ()  -> Devuelve todos los productos
 // getProducts ("Aromas") -> Devuelve todos los productos de la categoria Aromas
@@ -55,6 +55,26 @@ export const getProduct = (id) => {
 //         }, 1000); // 1 segundo
 //     });
 // }
+
+export const getProduct = (id) => {
+    return new Promise((resolve, reject) => {
+      const db = getFirestore();
+  
+      const itemDoc = doc(db, "items", id);
+  
+      getDoc(itemDoc)
+        .then((doc) => {
+          if (doc.exists()) {
+            resolve({ id: doc.id, ...doc.data() });
+          } else {
+            resolve(null);
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
 
 export const getProducts = (categoryId) => {
   return new Promise((resolve, reject) => {
@@ -82,3 +102,10 @@ export const getProducts = (categoryId) => {
   });
 };
 
+export const createOrder = (orden) => {
+  const db = getFirestore();
+
+  const ordersCollection = collection(db, "orders");
+
+  return addDoc(ordersCollection, orden);
+};

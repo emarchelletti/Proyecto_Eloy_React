@@ -1,9 +1,9 @@
-// Este es un componente de presentacion que muestra el resultado de las funciones que hace el componente funcional "ItemListContainer"
 import { useState } from 'react';
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
-const Card = ({ card }) => {
-  console.log(card);
+const Card = ({ item, addItem }) => {
+
   const [quantity, setQuantity] = useState(1);
 
   const incrementQuantity = () => {
@@ -16,57 +16,72 @@ const Card = ({ card }) => {
     }
   };
 
-  // const addToCart = () => {
-
-  //     if (quantity <= stock[0].cantidad) {
-  //         alert('Productos agregados al carrito')
-  //     } else
-  //         alert('No hay stock')
-  // };
+  if (!item) {
+    return <h1 className='text-center mt-5'>Producto no encontrado</h1>
+  }
 
   return (
 
     <>
-      <h1 className='text-center display-1'>Detalle del Producto</h1>
-      <div className='container'>
-        <div className='row justify-content-center'>
+      
+
+      <div className='container mt-2'>
+      
+        <div className='row justify-content-center align-items-center'>
+
+        
+        <div className=' col-6'>
+        <h1 className='text-center display-3 mt-2'>{item.title}</h1>
+        <div className='d-flex justify-content-evenly'>
+          <Link to='/' className="btn btn-secondary btnProducto m-1"> Seguir comprando </Link>
+          <Link to="/cart" className="btn btn-success btnProducto m-1"> Terminar compra </Link> 
+          </div>
+        </div>
 
           <div className="col-6">
-            <div className="card mb-5 shadow">
-              <img src={card.img} className="card-img-top img-fluid" alt="Producto" />
+            <div className="card mb-5 shadow ">
+
+              <img src={`../../../public/${item.imageId}`} className="card-img-top img-fluid" alt="Producto" />
+
               <div className="card-body">
-                <h2 className="card-title">{card.name}</h2>
-                <h3 className="card-text">{card.description}</h3>
-                <p className="card-text">Precio: ${card.price}</p>
+                <p className="card-text">{item.description}</p>
+                <p className="card-text display-6">Precio: ${item.price}</p>
 
                 <div className="row align-items-center">
                   <div className="col-6">
                     <div className="input-group">
                       <button className="btn btn-primary" data-bs-toggle="button" type="button" onClick={decrementQuantity}>-</button>
-                      <input type="text" className="form-control" value={quantity} readOnly />
+                      <input type="text" className="form-control" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} />
                       <button className="btn btn-primary" data-bs-toggle="button" type="button" onClick={incrementQuantity}>+</button>
                     </div>
                   </div>
 
                   <div className="col-6">
-                    <button className="btn btn-primary" /*>onClick={addToCart}*/>Agregar al carrito</button>
+                    <button className="btn btn-primary" onClick={() => addItem(item, quantity)}>Agregar al carrito</button>
                   </div>
                 </div>
 
               </div>
+
             </div>
 
           </div>
 
 
         </div>
+
+        
+
       </div>
     </>
   );
+
+
 };
 
 Card.propTypes = {
-  card: PropTypes.object,
+  item: PropTypes.object,
+  addItem: PropTypes.func,
 };
 
 export default Card;

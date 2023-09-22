@@ -1,25 +1,23 @@
-import { useState } from "react";
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import {getCartQuantity} from '../../services/utils';
 
 const CartWidget = () => {
-    const [cart, setCart] = useState(0);
-
+    const {cart} = useContext(CartContext);
+    const quantity = getCartQuantity(cart);
     
-    const handleCartClick = () => {
-        if (cart < 10) {
-        setCart(cart + 1);
-    }
-}
-
     return (
-
-        <button type="button" className="btn btn-dark position-relative" onClick={handleCartClick}>
+        <Link to='/Cart'>
+        <button type="button" className="btn btn-dark position-relative">
             <i className="bi bi-cart-fill fs-3"></i>
             <span className=" position-absolute start-80 badge bg-danger rounded-pill">
-            {cart}
+            {quantity > 0 ? quantity : ""}
             </span>
             <span className="visually-hidden">Cantidades carrito</span>
-
+            
         </button >
+        </Link>
     )
 }
 

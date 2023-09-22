@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import App from './App.jsx'
 import './index.css'
 import {BrowserRouter} from 'react-router-dom'
-import { initializeApp } from "firebase/app";
+import {initializeApp} from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA6B8o0AhVwuF2i4t3FQSwHVtrWgKOtPAY",
