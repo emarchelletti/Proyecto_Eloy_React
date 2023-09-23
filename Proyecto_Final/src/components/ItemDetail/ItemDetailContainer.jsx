@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from 'react';
 import { getProduct } from '../../services/productos';
-import Card from './Card';
+import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import CartContext from '../../context/CartContext';
 
 
-const CardContainer = () => {
+const ItemDetailContainer = () => {
 
     const [product, setProducts] = useState([]); // Se declara el estado product y la funcion setProducts
     const {id} = useParams();
@@ -19,7 +19,7 @@ const CardContainer = () => {
 
     }, [id]);
 
-    return <Card item={product} addItem={addItem}/>;
+    return <ItemDetail item={product} addItem={addItem}/>;
 }
 
-export default CardContainer;
+export default ItemDetailContainer;

@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const {categoryId} = useParams();
     
     useEffect(() => {
-        console.log('Estas en la pagina de la categoria:',categoryId);
+       
         getProducts(categoryId).then((result) => {
 
             setProducts(result);
@@ -17,7 +17,7 @@ const ItemListContainer = () => {
         });
     }, [categoryId]);
 
-    return <ItemList productos={product}/>
+    return <ItemList products={product}/>
 
 };
 

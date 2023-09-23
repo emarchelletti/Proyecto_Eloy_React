@@ -16,13 +16,12 @@ const Navbar = () => {
 
                 <ul className='navbar-nav mx-auto'>
                     <li className="nav-item">
-                        <NavLink  to="/category/cafe" className="nav-link fs-5 text-white ">Cafe</NavLink>
+                        <NavLink to="/category/cafeteras" className="nav-link fs-5 text-white ">Cafeteras</NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink  to="/category/cafeteras" className="nav-link fs-5 text-white border-start border-white border-3">Cafeteras</NavLink>
-                    </li>
+                        <NavLink to="/category/cafe" className="nav-link fs-5 text-white border-start border-white border-3">Cafe</NavLink>                    </li>
                     <li className="nav-item">
-                    <NavLink  to="/category/regalos" className="nav-link fs-5 text-white border-start border-white border-3">Gift Cards</NavLink>
+                        <NavLink to="/category/regalos" className="nav-link fs-5 text-white border-start border-white border-3">Gift Cards</NavLink>
                     </li>
                 </ul>
 

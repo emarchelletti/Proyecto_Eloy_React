@@ -7,9 +7,11 @@
     return count;
   };
   
+  // obtengo el valor total del carrito
   export const getCartTotal = (cart) => {
     return cart.reduce((acc, item) => acc + item.quantity * item.price, 0);
   };
+  
   
   export const mapCartToOrderItems = (cart) => {
     return cart.map((item) => ({

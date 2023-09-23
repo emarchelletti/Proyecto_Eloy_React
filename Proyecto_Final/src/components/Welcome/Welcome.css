@@ -1,0 +1,12 @@
+.welcome-container {
+    background-image: url('../../../public/WelcomePage.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+
+.text {
+  color:black;
+  text-decoration: none;
+  background-color: aliceblue;
+}    
