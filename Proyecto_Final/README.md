@@ -8,9 +8,8 @@ Este proyecto tiene como objetivo crear un ecommerce utilizando React + Vite, do
 
 ## Funcionalidades
 
-![Gif1](https://srv.media.io/storage/task/2023-09-25/x2QwKM6Y.gif)
+[Vite-React.webm](https://github.com/emarchelletti/Proyecto_Eloy_React/assets/88469019/0ee37b32-4ce1-46a3-bd40-293f6d46e913)
 
-![Gif2](https://srv.media.io/storage/task/2023-09-25/Wo25VmQd.gif)  
 
 **- Catálogo de productos:** Los usuarios pueden navegar por los productos disponibles. La lista de productos se obtiene a través de una API de productos.
 
