@@ -55,10 +55,10 @@ export const getProducts = (categoryId) => {
   });
 };
 
-export const createOrder = (orden) => {
+export const createOrder = (order) => {
   const db = getFirestore();
 
   const ordersCollection = collection(db, "orders");
 
-  return addDoc(ordersCollection, orden);
+  return addDoc(ordersCollection, order);
 };

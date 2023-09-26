@@ -18,44 +18,41 @@ const Cart = () => {
 
   return (
 
-    <div className="container m-5">
-      <h1>Detalle de tu carrito de compras:</h1>
-    <div className="border col-3">
-    {cart.map((item) => (
-    <div className="px-2">
-        <h3> {item.title} </h3>
-        <p>Cantidad: {item.quantity} </p>
-        <p>Precio: $ {item.price} </p>
-        <hr />
-    </div>))}
-      {/* <ul>
-        {cart.map((item) => (
-          
-          <li key={item.id}>
-            {item.title} - Cantidad: {item.quantity} Precio: $ {item.price * item.quantity}
-            <br />
-            <button
-              onClick={() => addItem(item, 1)}
-              className="btn btn-primary me-2"
-            >
-              Agregar
-            </button>
-            <button
-              onClick={() => removeItem(item.id)}
-              className="btn btn-danger"
-            >
-              Remover item
-            </button>
-          </li>
-        ))}
-      </ul> */}
-      <h3 className="h1 text-center">Total: ${total} </h3>
+    <div className="container">
+      <h1 className="py-5">Detalle de tu carrito de compras:</h1>
+      <div className="border col-6 py-3">
+
+        <ul>
+          {cart.map((item) => (
+            <li className="h5" key={item.id}>
+              {item.title} - Cantidad: {item.quantity} 
+              <br />
+              Subtotal: $ {item.price * item.quantity}
+              <br />
+              <button onClick={() => addItem(item, 1)} className="btn btn-primary btn-sm me-2">
+                Agregar
+              </button>
+              <button onClick={() => removeItem(item.id)} className="btn btn-danger btn-sm">
+                Remover item
+              </button>
+              <hr />
+            </li>
+          ))}
+        </ul>
+
+        <h3 className="h1 text-center fw-bold">Total: ${total} </h3>
+
       </div>
       <hr />
       <div className="d-flex justify-content-evenly">
         <button onClick={clear} className="btn btn-danger">
           Vaciar carrito
         </button>
+        <Link to='/itemlist'>
+          <button className="btn btn-info">
+            Seguir comprando
+          </button>
+        </Link>
         <Link to='/checkout'>
           <button className="btn btn-success">
             Finalizar compra

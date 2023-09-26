@@ -1,14 +1,16 @@
-# Proyecto de ecommerce con React
+# Proyecto de ecommerce "Coffee Market" con React
 
   
 
-Este proyecto tiene como objetivo crear un ecommerce utilizando React, donde los usuarios puedan ingresar, navegar por los productos y ver sus detalles, agregarlos al carrito y realizar la compra.
+Este proyecto tiene como objetivo crear un ecommerce utilizando React + Vite, donde los usuarios puedan ingresar, navegar por los productos y ver sus detalles, agregarlos al carrito y realizar la compra.
 
   
 
 ## Funcionalidades
 
-  
+![Gif1](https://srv.media.io/storage/task/2023-09-25/x2QwKM6Y.gif)
+
+![Gif2](https://srv.media.io/storage/task/2023-09-25/Wo25VmQd.gif)  
 
 **- Catálogo de productos:** Los usuarios pueden navegar por los productos disponibles. La lista de productos se obtiene a través de una API de productos.
 
@@ -57,18 +59,19 @@ Para el correcto funcionamiento, es necesario tener seteadas las variables de en
 
   
 
--  `VITE_API_KEY`: la API key de Firebase.
+-  `VITE_FIRESTORE_API_KEY`: la API key de Firebase.
 
--  `VITE_AUTH_DOMAIN`: el dominio de autenticación de Firebase.
+-  `VITE_FIRESTORE_AUTH_DOMAIN`: el dominio de autenticación de Firebase.
 
--  `VITE_PROJECT_ID`: el ID del proyecto de Firebase.
+-  `VITE_FIRESTORE_PROJECT_ID`: el ID del proyecto de Firebase.
 
--  `VITE_STORAGE_BUCKET`: el bucket de almacenamiento de Firebase.
+-  `VITE_FIRESTORE_STORAGE_BUCKET`: el bucket de almacenamiento de Firebase.
 
--  `VITE_MESSAGING_SENDER_ID`: el ID del sender de Firebase.
+-  `VITE_FIRESTORE_MESSAGING_SENDER_ID`: el ID del sender de Firebase.
 
--  `VITE_APP_ID`: el ID de la aplicación de Firebase.
-  
+-  `VITE_FIRESTORE_APP_ID`: el ID de la aplicación de Firebase.
+
+-  `VITE_FIRESTORE_MEASUREMENT_ID`: el ID de la aplicación para la medicion de datos con Google Analytics.  
 
 ## Contribuir
 

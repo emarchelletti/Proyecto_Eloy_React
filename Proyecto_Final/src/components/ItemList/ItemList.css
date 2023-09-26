@@ -4,6 +4,7 @@
     height: 300px 
   }
 
-.card-height {
-    height: 25vh;
-}  
+  .fixed-height-card {
+    height: 500px; 
+  
+}
